@@ -1,18 +1,5 @@
 import streamlit as st
 import json
-js = """
-<script>
-var elements = document.getElementsByClassName("viewerBadge_link__1S137");
-while (elements.length > 0) {
-    elements[0].parentNode.removeChild(elements[0]);
-}
-</script>
-"""
-
-st.write(js, unsafe_allow_html=True)
-
-st.title('Semantic Schema Markup Generator')
-
 # Input boxes
 about_data = st.text_area('About', help='Enter URLs line by line')
 mention_data = st.text_area('Mentions', help='Enter URLs line by line')
