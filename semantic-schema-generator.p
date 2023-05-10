@@ -1,5 +1,8 @@
 import streamlit as st
 import json
+
+st.title('Semantic Schema Markup Generator')
+
 # Input boxes
 about_data = st.text_area('About', help='Enter URLs line by line')
 mention_data = st.text_area('Mentions', help='Enter URLs line by line')
@@ -24,13 +27,13 @@ if st.button('Generate'):
         "@id": website,
         "headline": page_title,
         "url": website,
-        "about": {
-            "@graph": about
-        },
-        "mentions": {
-            "@graph": mentions
-        }
-    }
+        "about": [
+            about
+        ],
+        "mentions": [
+            mentions
+        ]
+            }
 
     # Print schema
     schema_str = '<script type="application/ld+json">\n' + json.dumps(schema, indent=2) + '\n</script>'
