@@ -1,14 +1,7 @@
 import streamlit as st
 import json
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            .viewerBadge_container__1QSob {visibliity: hidden;}
-            .stActionButton {visibliity: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 st.title('Semantic Schema Markup Generator')
 
 # Input boxes
