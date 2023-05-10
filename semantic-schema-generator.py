@@ -1,6 +1,15 @@
 import streamlit as st
 import json
-st.set_option('deprecation.showPyplotGlobalUse', False)
+js = """
+<script>
+var elements = document.getElementsByClassName("viewerBadge_link__1S137");
+while (elements.length > 0) {
+    elements[0].parentNode.removeChild(elements[0]);
+}
+</script>
+"""
+
+st.write(js, unsafe_allow_html=True)
 
 st.title('Semantic Schema Markup Generator')
 
